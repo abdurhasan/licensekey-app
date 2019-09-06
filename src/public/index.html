@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>License Key app</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|RobotoDraft:400,100,300,500,700,900">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+  <!-- Mixins-->
+  <!-- Pen Title-->
+  <div class="pen-title">
+    <h1>PC Registration</h1>    
+  </div>
+
+  <div class="container">
+    <div class="card"></div>
+    <div class="card">
+      <h1 class="title">Pesion Core</h1>
+      
+      <form id="register-form">
+        <div class="input-container">
+          <input id="#{label}" required name="companyid"/>
+          <label for="#{label}">Company ID</label>
+          <div class="bar"></div>
+        </div>
+        <div class="input-container">
+          <input id="#{label}" required name="pic"/>
+          <label for="#{label}">PIC</label>
+          <div class="bar"></div>
+        </div>
+        <div class="input-container">
+          <input id="#{label}" required name="activationkey"/>
+          <label for="#{label}">Activation Key</label>
+          <div class="bar"></div>
+        </div>
+        <div class="button-container">
+          <button type="submit"><span>Done</span></button>
+        </div>
+        
+      </form>
+    </div>
+    <div class="card alt">
+      <div class="toggle" onclick="activateContainer()"></div>
+      <h1 class="title">your Pc
+        <div class="close" onclick="deactivateContainer()"></div>
+      </h1>
+      <form>
+        <div class="input-container">
+          <input id="pcname" onclick="saveValue(this)" onchange="dontChange(this)"/>
+          <label for="#{label}">PC Name</label>
+          <div class="bar"></div>
+        </div>
+        <div class="input-container">
+          <input id="osversion" onclick="saveValue(this)" onchange="dontChange(this)"/>
+          <label for="#{label}">OS Version</label>
+          <div class="bar"></div>
+        </div>
+        <div class="input-container">
+          <input id="cpu" onclick="saveValue(this)" onchange="dontChange(this)"/>
+          <label for="#{label}">CPU</label>
+          <div class="bar"></div>
+        </div>
+
+        <div class="input-container">
+          <input id="graphics" onclick="saveValue(this)" onchange="dontChange(this)" />
+          <label for="#{label}">Graphics</label>
+          <div class="bar"></div>
+        </div>
+        <div class="button-container">
+          <button><span>Next</span></button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+
+  <script>
+    require('../renderer.js')
+    let state = new Object
+
+    const setState = (obj) => {
+      return state = obj
+
+    }
+
+
+
+    function saveValue(e) {
+      setState({
+        currentVal: e.value
+      })
+    }
+
+    function dontChange(el) {
+      el.value = state.currentVal
+    }
+
+
+
+
+    const containerEl = document.getElementsByClassName('container')['0']
+
+    function activateContainer() {
+      containerEl.className += ' active'
+    }
+    function deactivateContainer() {
+      containerEl.className = containerEl.className.replace(/\active\b/g, "")
+    }
+  </script>
+</body>
+
+</html>

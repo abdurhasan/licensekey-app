@@ -1,0 +1,26 @@
+{
+  "name": "license_key",
+  "version": "1.0.0",
+  "description": "An app for machine registration as pensioncore's user",
+  "main": "app.js",
+  "scripts": {
+    "start": "node_modules/.bin/electron .",
+    "dev": "nodemon  --exec 'node_modules/.bin/electron .'"
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "keywords": [
+    "code coffee creative",
+    "dana pensiun",
+    "system",
+    "finance",
+    "pensioncore"
+  ],
+  "author": "GitHub",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^6.0.6"
+  },
+  "dependencies": {
+    "systeminformation": "^4.14.8"
+  }
+}
